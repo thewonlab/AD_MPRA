@@ -137,7 +137,7 @@ res$var = unlist(lapply(strsplit(res$variant, split=":"), '[[', 1))
 ### MPRA-ACTIVE CONDITIONAL VARIANTS 
 res_cond = res[res$var %in% res_act$var, ] #needs to be active in at least one allele
 res_cond$fdr_interaction = p.adjust(res_cond$pvalue_interaction, "BH")
-res_cond = res_cond[res_cond$fdr_interaction<0.1, ]
+res_cond = res_cond[res_cond$fdr_interaction<0.05, ]
 dim(res_cond)
-length(unique(res_cond[res_cond$beta_interaction>0, "var"])) # treatment-specific: 36
-length(unique(res_cond[res_cond$beta_interaction<0, "var"])) # ctrl(resting)-specific: 173
+length(unique(res_cond[res_cond$beta_interaction>0, "var"])) # treatment-specific
+length(unique(res_cond[res_cond$beta_interaction<0, "var"])) # ctrl(resting)-specific
