@@ -16,4 +16,5 @@ Created by Marielle Bond (marielle_bond@med.unc.edu) 7/30/2024
 
 ## REFERENCE
 
-Manuscript in preparation.
+Manuscript in revision.
+Medrxiv : https://www.medrxiv.org/content/10.1101/2024.09.13.24313654v1
