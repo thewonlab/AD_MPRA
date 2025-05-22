@@ -82,6 +82,10 @@ allelic$sig <- ""
 allelic[allelic$adj.P.Val<0.05,]$sig <- TRUE
 allelic[allelic$adj.P.Val>0.05,]$sig <- FALSE
 
+write.table(allelic, file = "/proj/hyejunglab/MPRA/RNAseq/AD/Marielle/mpralm_allelic_results.txt", sep = "\t", quote = F, row.names = FALSE)
+write.table(conditional, file = "/proj/hyejunglab/MPRA/RNAseq/AD/Marielle/mpralm_conditional_results.txt", sep = "\t", quote = F, row.names = FALSE)
+save(mpraresult, file = "/proj/hyejunglab/MPRA/RNAseq/AD/Marielle/mpraresult.rda")
+
 
 # Adjust LFC according to risk/protection (from the beta value from the summary statistics) 
 beta <- read.table("/work/users/m/a/marielle/work/AD3D/data/mpra/betaValues.txt", header=T) ## this is an excerpt from the Jansen et al 2019 summary statistics
@@ -91,3 +95,5 @@ adjusted <- merge(allelic, beta, by = "id")
 adjusted <-
   adjusted %>%
   mutate(corrected_logFC = ifelse(beta < 0, -1 * (logFC), logFC))
+
+

@@ -16,3 +16,5 @@ adjusted[adjusted$id %in% active,]$active <- TRUE
 
 ## Define emVars
 emvar <- adjusted[adjusted$sig==TRUE & adjusted$active == TRUE,]$rsid
+
+
