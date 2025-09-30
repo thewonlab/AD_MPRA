@@ -1,5 +1,5 @@
 ## How far are emVars from the lead SNP? What about how far the lead SNPs are from all other variants, not just emVars? 
-## Generates figure s1d
+## Generates figure s2d
 
 ## Load libraries
 library(data.table)
